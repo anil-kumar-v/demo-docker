@@ -1,5 +1,4 @@
-FROM centos:latest
-RUN yum -y install httpd
-COPY index.html /var/www/html/
-CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
+FROM ubuntu:latest
+RUN apt-get install httpd -y
+CMD systemctl start apache2
 EXPOSE 80
